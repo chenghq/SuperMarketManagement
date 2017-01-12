@@ -1,0 +1,330 @@
+@CHARSET "UTF-8";
+
+body, div, ol, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, p, form,
+	fieldset, legend, input, button {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	width: 100%;
+	font-family: 'Heiti SC', 'Microsoft YaHei';
+	font-size: 100px;
+	outline: 0;
+	-webkit-text-size-adjust: none;
+}
+
+body {
+	width: 100%;
+	margin: 0;
+	-webkit-user-select: none;
+	position: relative;
+	background-color: #fff;
+}
+
+.nav {
+	text-align: center;
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+}
+
+.nav>li {
+	position: relative;
+	display: block;
+}
+
+.nav>li>a {
+	position: relative;
+	display: block;
+	padding: 10px 15px;
+}
+
+#Container {
+	width: 100%;
+	margin: 0 auto; /*设置整个容器在浏览器中水平居中*/
+}
+
+#Header {
+	height: 5%;
+	width: 100%;
+	background: #F3DD40;
+	position: fixed;
+	text-align: center;
+	/* font-size: 20px; */
+}
+
+#Content {
+	height: 100%;
+	/*此处对容器设置了高度，一般不建议对容器设置高度，一般使用overflow:auto;属性设置容器根据内容自适应高度，如果不指定高度或不设置自适应高度，容器将默认为1个字符高度，容器下方的布局元素（footer）设置margin-top:属性将无效*/
+	/*margin-top:20px;此处讲解margin的用法，设置content与上面header元素之间的距离*/
+}
+
+#Content-Left {
+	height: 100%;
+	width: 20%;
+	/*margin:20px;设置元素跟其他元素的距离为20像素*/
+	margin-top: 8.2%;
+	float: left; /*设置浮动，实现多列效果，div+Css布局中很重要的*/
+	background: #EDF2F7;
+	position: fixed;
+}
+
+#Content-Main {
+	height: 100%;
+	width: 80%;
+	margin-top: 8%;
+	/*margin:20px;设置元素跟其他元素的距离为20像素*/
+	float: right; /*设置浮动，实现多列效果，div+Css布局中很重要的*/
+}
+
+a:hover, a:link, a:visited, a {
+	color: inherit;
+	text-decoration: none;
+}
+
+ul, li {
+	list-style: none
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 4rem;
+	height: 0.45rem;
+	line-height: 0.45rem;
+	background-color: #ECECEC;
+}
+
+footer .ft-lt {
+	float: left;
+	width: 2.749rem;
+	height: 0.45rem;
+}
+
+footer .ft-lt p {
+	float: left;
+	margin-left: 0.15rem;
+	font-size: 0.18rem;
+}
+
+footer .ft-rt {
+	float: left;
+	width: 1.25rem;
+	height: 0.45rem;
+	background-color: #39B867;
+}
+
+footer .ft-rt p {
+	font-size: 0.2rem;
+	color: #fff;
+	text-align: center;
+}
+
+.jq {
+	width: 3rem;
+	height: 0.8rem;
+}
+
+.swiper-container {
+	width: 4rem;
+	height: 0.85rem;
+}
+
+.swiper-wrapper img {
+	width: 4rem;
+	height: 0.85rem;
+}
+
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: #fff; /* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+.top p span.tp-lf {
+	float: left;
+	margin-left: 0.15rem;
+}
+
+.top p span.tp-rt {
+	float: right;
+	margin-right: 0.15rem;
+}
+
+.nav-lf {
+	position: absolute;
+	left: 0;
+	width: 1rem;
+	background-color: #E5E5E5;
+	font-size: 0.15rem;
+	text-align: center;
+}
+
+.nav-lf ul li {
+	position: relative;
+	width: 1rem;
+	height: 0.4rem;
+	line-height: 0.4rem;
+}
+
+.nav-lf ul li b {
+	position: absolute;
+	top: 0.05rem;
+	right: 0.05rem;
+	display: none;
+	width: 0.2rem;
+	height: 0.2rem;
+	line-height: 0.2rem;
+	font-size: 0.15rem;
+	color: #fff;
+	background-color: #FF5151;
+	border-radius: 0.1rem;
+}
+
+.container {
+	position: absolute;
+	right: 0;
+	width: 3rem;
+	z-index: -1;
+}
+
+.active {
+	background-color: #fff;
+	color: #FB5F3A;
+}
+
+.sticky {
+	position: fixed;
+	top: 0;
+	animation: thedrop 1s 1;
+	-moz-animation: thedrop 1s 1;
+	-webkit-animation: thedrop 1s 1;
+	background-color: #E5E5E5;
+	font-size: 0.15rem;
+}
+
+.sticky .nav-above {
+	position: absolute;
+	top: 0;
+	left: 1em;
+	right: 1em;
+	height: 15px;
+}
+
+.section {
+	background-color: #fff;
+}
+
+.prt-lt {
+	position: relative;
+	width: 3rem;
+	height: 0.8rem;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.prt-lt .lt-lt {
+	position: relative;
+	float: left;
+	width: 0.8rem;
+	height: 0.6rem;
+	margin: 0.1rem;
+}
+
+.prt-lt .lt-lt img {
+	float: left;
+	width: 0.8rem;
+	height: 0.6rem;
+}
+
+.prt-lt .lt-lt i.commend {
+	position: absolute;
+	top: 0;
+	left: 0.05rem;
+	display: block;
+	width: 0.18rem;
+	height: 0.24rem;
+	background: url(../images/index/commend.png) no-repeat;
+	background-size: 0.18rem 0.24rem;
+}
+
+.prt-lt .lt-ct {
+	float: left;
+	width: 1.9rem;
+	height: 0.6rem;
+	margin-top: 0.1rem;
+}
+
+.prt-lt .lt-ct p {
+	font-size: 0.18rem;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.prt-lt .lt-ct p.pr {
+	margin-top: 0.2rem;
+	color: #FF5151;
+}
+
+.prt-lt .lt-rt {
+	position: absolute;
+	bottom: 0.1rem;
+	right: 0.1rem;
+	width: 0.9rem;
+	height: 0.3rem;
+}
+
+.prt-lt .lt-rt input {
+	float: left;
+	width: 0.28rem;
+	height: 0.28rem;
+	font-size: 0.18rem;
+	border: 1px solid #e5e5e5;
+	text-align: center;
+	color: #A1A09C;
+	background-color: #fff;
+}
+
+.prt-lt .lt-rt input.result {
+	border: none;
+	color: #FF5151;
+}
+
+.total {
+	color: #FF5151;
+}
+
+.nm {
+	color: #868B92;
+}
+
+.support {
+	width: 3rem;
+	height: 0.4rem;
+	margin-bottom: 0.45rem;
+	background-color: #fff;
+}
+
+.support p {
+	line-height: 0.4rem;
+	text-align: center;
+	font-size: 0.15rem;
+	color: #CCCCCC;
+}
+
+.Clear {
+	clear: both;
+}

@@ -1,0 +1,570 @@
+body {
+	font-family: "Microsoft Yahei", "微软雅黑", "Helvetica Neue", "adobe雅黑", "helvetica neue", tahoma, "hiragino sans gb", stheiti, "wenquanyi micro hei", \5FAE\8F6F\96C5\9ED1, \5B8B\4F53, sans-serif;
+}
+
+
+.btn-primary:disabled,
+.btn-primary[disabled],
+.btn-success:disabled,
+.btn-success[disabled],
+.btn-info:disabled,
+.btn-info[disabled],
+.btn-warning:disabled,
+.btn-warning[disabled],
+.btn-danger:disabled,
+.btn-danger[disabled] {
+	background-color: #e0e0e0;
+	background-image: none;
+	text-shadow: 0 1px 0 #fff;
+	border-color: #ccc;
+	color: #aeaeae;
+}
+
+.svg-icon {
+	width: 24px;
+	height: 24px;
+}
+
+/* 控制台主页面的左侧菜单 */
+.cloud-nav {
+	background-color: #32323A;
+	margin-left: 0;
+	padding: 0 0 20px 0;
+	color: #dddddd;
+	position: fixed;
+	width: 216px;
+	height: 100%;
+	overflow-y: auto;
+}
+
+.cloud-nav .nav-head {
+	padding-top: 10px;
+	background-color: #28282E;
+	border-bottom: 1px solid #42454B;
+}
+
+.cloud-nav .avatar-container {
+	margin-left: 17px;
+	white-space: nowrap;
+	max-width: 180px;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+}
+
+.cloud-nav .avatar {
+	font-size: 40px;
+	margin-left: 5px;
+}
+
+.cloud-nav .user {
+	color: #5FAEE3;
+}
+
+.cloud-nav .icon-container {
+	margin-left: 10px;
+	margin-right: 20px;
+	text-align: center;
+	padding-left: 0;
+	width: 226px;
+}
+
+.cloud-nav .icon-container a {
+	margin-right: 22px;
+}
+
+.cloud-nav .area-menu {
+	position: relative;
+	margin: 10px 20px 10px 20px;
+}
+
+.cloud-nav .area-menu > button {
+	width: 100%;
+	height: 32px;
+	background-color: #32323A;
+	font-size: 18px;
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+}
+
+.cloud-nav .area-menu > button > span {
+
+}
+
+.cloud-nav .area-menu .cloud-menu {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	text-align: center;
+}
+
+.cloud-nav .area-menu.open .cloud-menu {
+	display: block;
+}
+
+/* 折叠列表 */
+.accordion {
+}
+
+.accordion-item {
+
+}
+
+.accordion-item-heading {
+	height: 36px;
+	line-height: 36px;
+	font-size: 20px;
+	padding-left: 36px;
+	background-color: #32323A;
+	cursor: pointer;
+}
+
+.accordion-item-heading .icon {
+	margin-right: 6px;
+	font-size: 20px;
+}
+
+.accordion-item-heading.active {
+	background-color: #1E1E23;
+}
+
+.accordion-item-heading:hover {
+	opacity: 0.2;
+}
+
+/* 二级菜单 */
+.cloud-menu {
+	visibility: visible;
+	z-index: 2;
+	width: 100%;
+	background-color: #32323A;
+}
+
+.cloud-menu ul {
+	position: absolute;
+	visibility: hidden;
+	left: -10000px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	top: -10000px;
+	z-index: 1;
+}
+
+.cloud-menu > ul {
+	position: relative;
+	left: 0;
+	top: 0;
+	visibility: visible;
+}
+
+.cloud-menu > ul:focus {
+	outline: 0;
+}
+
+.cloud-menu li {
+	position: relative;
+	height: 36px;
+	line-height: 36px;
+}
+
+.cloud-menu li a {
+	padding: 7px 67px;
+	display: block;
+	color: inherit;
+	line-height: 1.5em;
+	text-decoration: none;
+	white-space: nowrap;
+	border: none;
+	font-size: 14px;
+}
+
+.cloud-menu li a:hover,
+.cloud-menu li a:focus {
+	/*
+	background: #eee;
+	color: #222;*/
+	background-color: #6a9256;
+	color: #000;
+	opacity: 0.6;
+
+}
+
+.cloud-menu .active a {
+	background-color: #5FAEE3;
+	color: #C5CACE;
+}
+
+.cloud-menu li a .icon {
+	margin-right: 14px;
+}
+
+/* 右侧的主界面 */
+.cloud-main {
+	background-color: #eee;
+	padding: 0;
+	margin-left: 216px;
+}
+
+.cloud-main .module-header {
+	padding: 0;
+}
+
+.cloud-main ul.nav-tabs {
+	background-color: #fff;
+	margin-bottom: 15px;
+	padding-left: 10px;
+}
+
+/* 顶部的标题和文字提示 */
+.cloud-main .header {
+	background-color: #f7f7f7;
+	padding: 15px;
+	margin-bottom: 10px;
+}
+
+.cloud-main .header .title {
+	text-transform: capitalize;
+	color: #1f90c8;
+	margin: 10px 10px 20px 10px;
+	font-size: 20px;
+}
+
+.cloud-main .header p {
+	margin: 0 10px 10px;
+	font-size: 12px;
+}
+
+.cloud-main .detail-header {
+	padding: 10px;
+}
+
+.cloud-main .detail-header .breadcrumb {
+	background-color: #fff;
+	font-size: 16px;
+	margin-bottom: 0px;
+}
+
+.cloud-main .detail-container {
+	padding-top: 20px;
+	background-color: #f7f7f7;
+	height: 100%;
+}
+
+.cloud-main .button-bar {
+	margin-bottom: 10px;
+}
+
+.cloud-main .button-bar > button {
+	margin-right: 10px;
+}
+
+.cloud-main .button-bar input {
+	display: inline-block;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	vertical-align: middle;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+/* 查不到数据时候的提示 */
+.no-data-notice {
+	color: #D63B3F;
+}
+
+/* 下划线式的面板*/
+.cloud-main .panel-detail {
+	margin-bottom: 20px;
+	background-color: #fff;
+	border-radius: 0px;
+	border: 1px solid #bbb;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.cloud-main .panel-detail > .panel-heading {
+	color: #333;
+	border-radius: 0;
+	border-bottom: 1px solid #bbb;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.panel-detail > .panel-body .detail-form .control-label {
+	padding-top: 7px;
+	margin-bottom: 0;
+	text-align: right;
+}
+
+.panel-detail > .panel-body .detail-form .form-group {
+	margin-bottom: 0px;
+	/*border-bottom: 1px solid #bbb;*/
+}
+
+p.form-control-static {
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+.panel-detail p.form-control-static:after {
+	content: "　";
+}
+
+.detail-form .form-group {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+th {
+	text-align: center;
+}
+
+table.wordwrap td {
+	white-space: nowrap;
+	max-width: 200px;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+}
+
+table.wordwrap th.checkbox-cell {
+	width: 30px;
+	max-width: 30px;
+}
+
+.modal-body {
+	max-height: 520px;
+	overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+	.modal-dialog-full {
+		width: auto;
+	}
+
+	.modal-dialog-wide {
+		width: 80%;
+	}
+}
+
+.notice {
+	border: 1px solid #ccf1c2;
+	background-color: #edfee2;
+	color: #009900;
+	padding: 15px;
+	margin-bottom: 10px;
+}
+
+.notice ul li {
+	list-style-image: url("../img/notice-point.png");
+}
+
+@font-face {
+	font-family: "iconfont";
+	src: url('../fonts/iconfont.eot'); /* IE9*/
+	src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/iconfont.woff') format('woff'), /* chrome、firefox */ url('../fonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+	font-family: "iconfont" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+/* 资源列表的样式 */
+.resource-item-container {
+	float: left;
+	width: 14.285%;
+	height: 140px;
+	padding: 5px;
+}
+
+.size-x-2 {
+	width: 28.57%;
+}
+
+.resource-item {
+	float: left;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	border: 1px solid #d0d0d0;
+	padding: 5px;
+}
+
+.resource-item:hover {
+	background-color: #f5f5f5;
+	cursor: pointer;
+}
+
+.resource-item .resource-item-count {
+	color: #5FAEE3;
+	font-size: 60px;
+}
+
+/* 数据库授权的样式 */
+.db-list {
+	max-height:120px;
+	overflow-y:auto;
+}
+
+.db-auth-btn {
+	padding-top: 40px;
+	text-align: center;
+}
+
+.db-auth-btn button {
+	margin-bottom: 10px;
+}
+
+/* 数据库列表中的绑定账号列表 */
+td div.db-account-list {
+
+}
+
+td div.db-account-list .db-name {
+	white-space: nowrap;
+	float: left;
+	width: 120px;
+	max-width: 120px;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+}
+
+/* 监控图形的布局 */
+.widget {
+	padding-left: 15px;
+	padding-right: 2px;
+}
+
+.widget .no-padding {
+	padding: 0px;
+}
+
+.widget .panel  {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: #fff;
+	border-radius: 0px;
+	border: 1px solid #bbb;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.widget .panel > .panel-heading {
+	color: #333;
+	border-radius: 0;
+	border-bottom: 1px solid #bbb;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.widget .panel > .panel-body {
+	padding: 0;
+}
+
+.widget-compact {
+	border-top: 1px solid #bbb;
+	border-left: 1px solid #bbb;
+	margin-top: -1px;
+	margin-left: -1px;
+}
+
+.monitor-sidebar {
+	background-color: #f4f4f4;
+	margin: 0px;
+	border-radius: 0px;
+	text-align: center;
+}
+
+.monitor-sidebar.active {
+	background-color: #c4c4c4;
+	font-weight: bold;
+}
+
+/* 类似tab那种切换按钮 */
+.switch-button {
+	color: #666666;
+	background-color: #eaeaea;
+	width: 80px;
+	height: 32px;
+	border-radius: 1px;
+}
+
+.switch-button.active {
+	color: #f7f7f7;
+	background-color: #48a3e0;
+}
+
+.cloud-main .button-bar .switch-button {
+	margin-right: -4px;
+}
+
+.placeholder {
+	color: #888;
+}
+::-webkit-input-placeholder {
+	color: #888;
+}
+:-moz-placeholder {
+	color: #888;
+}
+::-moz-placeholder {
+	color: #888;
+}
+:-ms-input-placeholder {
+	color: #888;
+}
+
+@media screen and (max-width: 767px) {
+	.cloud-nav {
+		float: right;
+		margin-left: 0;
+		padding: 0 0 20px 0;
+		position: relative;
+		width: 100%;
+	}
+
+	.cloud-main {
+		float: right;
+		width: 100%;
+		margin-left: 0px;
+	}
+
+	.resource-item-container {
+		width: 33.33%;
+	}
+
+	.size-x-2 {
+		width: 66.66%;
+	}
+}
