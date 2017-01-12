@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sqlMap namespace="products">
+	<!-- 查询list -->
+	<sql id="query_by_param" isRead="true">
+    	<![CDATA[
+    	SELECT * FROM PRODUCTS WHERE `status`=1
+    	<#if type?exists && type!="" > AND type = :type </#if>
+    	ORDER BY ID DESC
+		<#if startIndex?exists && startIndex!=""> LIMIT :startIndex,:maxCount</#if>
+    	]]>
+	</sql>
+	
+	<sql id="query_count_by_param" isRead="true">
+		<![CDATA[
+		SELECT COUNT(*) as count FROM PRODUCTS WHERE `status`=1 
+		<#if type?exists && type!="" > AND type = :type </#if>
+		]]>
+	</sql>
+</sqlMap>

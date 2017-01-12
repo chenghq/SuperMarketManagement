@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sqlMap namespace="address">
+	<!-- 查询list -->
+	<sql id="query_by_param" isRead="true">
+    	<![CDATA[
+    	SELECT addr.* FROM ADDRESS addr, USER_IPHONE user WHERE `user`.id = addr.user_id and addr.status = 1
+    	<#if userId?exists && userId!="" > AND user.id = :userId </#if>
+    	ORDER BY addr.create_time DESC
+		<#if startIndex?exists && startIndex!=""> LIMIT :startIndex,:maxCount</#if>
+    	]]>
+	</sql>
+</sqlMap>
