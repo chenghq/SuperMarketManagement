@@ -43,7 +43,7 @@ public class LoginController {
 	@Resource
 	UserIphoneService userIphoneService;
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
 	public String login(HttpServletRequest request, Model model) {
 		// 获取电话信息以及验证码信息
 		String iphone_number = request.getParameter("iphone_number");
@@ -69,7 +69,7 @@ public class LoginController {
 		return "goods";
 	}
 
-	@RequestMapping(value = "/getmask", method = RequestMethod.GET)
+	@RequestMapping(value = "/getmask.do", method = RequestMethod.GET)
 	@ResponseBody
 	public String getmask(HttpServletRequest request)
 			throws UnsupportedEncodingException, DocumentException {
@@ -103,7 +103,7 @@ public class LoginController {
 		Element root = doc.getRootElement();
 		String returnValue = null;
 		for (@SuppressWarnings("rawtypes")
-		Iterator iter = root.elementIterator(); iter.hasNext();) {
+			 Iterator iter = root.elementIterator(); iter.hasNext(); ) {
 			Element element = (Element) iter.next();
 			System.out.println("1111111==" + element.getName());
 			System.out.println("2222222==" + element.getStringValue());
@@ -117,32 +117,5 @@ public class LoginController {
 		}
 		return "true";
 	}
-	
-	private String request(String httpUrl, String httpArg) {
-	    BufferedReader reader = null;
-	    String result = null;
-	    StringBuffer sbf = new StringBuffer();
-	    httpUrl = httpUrl + "?" + httpArg;
 
-	    try {
-	        URL url = new URL(httpUrl);
-	        HttpURLConnection connection = (HttpURLConnection) url
-	                .openConnection();
-	        connection.setRequestMethod("GET");//("GET");
-	        connection.setRequestProperty("apikey",  "0f5776397f76286167597acf32c7f35d");
-	        connection.connect();
-	        InputStream is = connection.getInputStream();
-	        reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
-	        String strRead = null;
-	        while ((strRead = reader.readLine()) != null) {
-	            sbf.append(strRead);
-	            sbf.append("\r\n");
-	        }
-	        reader.close();
-	        result = sbf.toString();
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    }
-	    return result;
-	}
 }
