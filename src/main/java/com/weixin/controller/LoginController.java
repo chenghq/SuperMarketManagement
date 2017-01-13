@@ -13,6 +13,7 @@ import java.util.Iterator;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import com.weixin.dao.bean.UserIphone;
 import org.apache.commons.lang3.StringUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -50,8 +51,23 @@ public class LoginController {
             return "login";
         }
         // 根据电话号码来验证验证码
+        UserIphone userIphone = userIphoneService.getByPhoneNum(iphone_number);
+        if (null == userIphone) {
+            logger.error("- can not find the mask.");
+            model.addAttribute("message", "the mask is not exist.");
+            return "login";
+        }
 
-        logger.info("login success, so return goods.jsp");
+        if (userIphone.getMask() == Integer.parseInt(mask)) {
+            // TODO 将微信号、电话号码保存到数据库hll_user中
+
+            // TODO 验证这个验证码是否超时
+            logger.debug("- the mask is wright, login success. so return goods.jsp");
+            model.addAttribute("selected_group", "menugroup1");
+            model.addAttribute("selected_product", "fruits");
+            return "goods";
+        }
+
         // 将产品列表返回到前台界面
 /*		Map<String, String> productsMap1 = new HashMap<String, String>();
         productsMap1.put("fruits", "水果");
@@ -60,10 +76,9 @@ public class LoginController {
 		Map<String, Map<String, String>> menugroups = new HashMap<String, Map<String,String>>();
 		menugroups.put("menugroup1", productsMap1);
 		menugroups.put("menugroup2", productsMap1);*/
-
-        model.addAttribute("selected_group", "menugroup1");
-        model.addAttribute("selected_product", "fruits");
-        return "goods";
+        // 验证码错误
+        model.addAttribute("message", "the mask is error.");
+        return "login";
     }
 
     /**
